@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Cherry+Swash' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+
+    <title>Leslie Heal Ray</title>
+    <!-- Bootstrap core CSS -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-3.0.0/dist/css/bootstrap.min.css') }}" media="screen" />
+
+  </head>
+    {% block extra_css %}
+    {% endblock extra_css %}
+    <!-- Custom styles for this template -->
+  <link href='http://fonts.googleapis.com/css?family=Cherry+Swash' rel='stylesheet' type='text/css'>
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+
+
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ url_for("index") }}">Leslie Heal Ray</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+          {% for page in nav %}
+            <li>
+              <a href="{{ url_for("page", slug=page.slug) }}">{{ page.title }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+</div>
+    <div id="content">
+    {% block content%}
+      <p>Default content to be displayed</p>
+    {% endblock content %}
+<!-- <div class="redblock"><p>    </div>
+        <div id="footer">
+        <p>&copy; Leslie Heal Ray 2013</p>
+      </div>
+
+    </div><!-- /.container -->
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="{{ url_for('static', filename='css/bootstrap-3.0.0/css/bootstrap/js/bootstrap.min.js') }}"></script>
+    {% block extra_js %}
+    {% endblock extra_js %}
+  </body>
+</html>
+
