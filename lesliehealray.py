@@ -5,6 +5,7 @@ from flask_frozen import Freezer
 from flask.ext.mail import Mail
 from forms import ContactForm
 from flask.ext.mail import Message
+import os
 
 
 DEBUG = True
@@ -14,8 +15,8 @@ MAIL_SERVER = 'smtp.googlemail.com'
 MAIL_PORT = 465
 MAIL_USE_TLS = False
 MAIL_USE_SSL = True
-MAIL_USERNAME = 'lesliehealray@gmail.com'
-MAIL_PASSWORD = 'cantarediva'
+GMAIL_USER = os.environ.get('GMAIL_USER', '')
+GMAIL_PASSWORD = os.environ.get('GMAIL_PASSWORD', '')
 
 # administrator list
 ADMINS = ['lesliehealray@gmail.com']
@@ -42,6 +43,8 @@ NAVIGATION = (
     {'title': 'Contact', 'slug': 'contact'},
 
 )
+
+
 
 @app.route('/')
 def index():
