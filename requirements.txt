@@ -1,2 +1,4 @@
 Flask==0.10.1
 Frozen-Flask==0.11
+Flask-Mail==0.9.0
+
