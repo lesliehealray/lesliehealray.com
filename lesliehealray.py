@@ -24,8 +24,8 @@ ADMINS = ['lesliehealray@gmail.com']
 
 app = Flask(__name__)
 CSRF_ENABLED = True
-secret_key = 'cantarediva'
-WTF_CSRF_SECRET_KEY= 'cantarediva'
+secret_key = ''
+WTF_CSRF_SECRET_KEY= ''
 
 
 
